@@ -3,7 +3,7 @@ import pkg from "body-parser";
 const { json } = pkg;
 import { connect } from "mongoose";
 import userRoutes from "./src/routes/user_route.js";
-
+import roleRoutes from "./src/routes/role_route.js";
 const app = express();
 
 // Connect to MongoDB
@@ -18,7 +18,8 @@ connect("mongodb://localhost:27017/park", {
 app.use(json());
 
 // Routes
-app.use("/api", userRoutes);
+app.use("/api/user", userRoutes);
+app.use("/api/role", roleRoutes);
 
 // Start the server
 const port = process.env.PORT || 3050;

@@ -3,7 +3,7 @@ const router = express.Router();
 
 import { getUser, createUser } from "../controllers/user_controller.js";
 
-router.get("/user_list", async (req, res) => {
+router.get("/list", async (req, res) => {
   try {
     const user = await getUser();
     res.json(user);
@@ -12,7 +12,7 @@ router.get("/user_list", async (req, res) => {
   }
 });
 
-router.post("/user_create", async (req, res) => {
+router.post("/create", async (req, res) => {
   try {
     const user = await createUser(req.body);
     res.status(201).json(user);
