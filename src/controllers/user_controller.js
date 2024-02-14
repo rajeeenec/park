@@ -1,6 +1,5 @@
 import User from "../schemas/user_schemas.js";
 import sendEmail from "../utils/emailutils.js";
-
 export async function getUser() {
   try {
     return await User.find();
@@ -29,4 +28,9 @@ export async function createUser(users) {
   } catch (err) {
     throw new Error(err.message);
   }
+}
+
+export async function Login() {
+  try {
+  } catch (err) {}
 }
